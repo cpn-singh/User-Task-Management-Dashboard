@@ -1,0 +1,52 @@
+.tsk_mon-container {
+    display: flex; /* flex */
+    flex-direction: column; /* flex-col */
+    gap: 0.25rem; /* gap-1 */
+    margin-bottom: 1.25rem; /* mb-5 */
+    border: 1px solid #6b7280; /* border-1 border-gray-500 */
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 0.5rem; /* p-2 */
+    background-color: #252424; /* bg-gray-700 */
+}
+
+/* text-2xl = 1.5rem */
+.tsk_mon-container h2 {
+    font-size: 1.5rem; 
+    font-weight: 500; /* font-medium */
+    text-align: center; /* text-center */
+    text-decoration: underline; /* text-underline */
+    color: #d1d5db; /* text-gray-300 */
+}
+
+.tsk_mon-container h3 {
+    color: #e5e7eb; /* text-gray-200 */
+    font-weight: 500; /* font-medium */
+    display: flex; /* flex */
+    gap: 2.5rem; /* gap-10 */
+    justify-content: space-between; /* justify-between */
+    width: 100%; /* w-full */
+    align-items: center; /* items-center */
+    padding-left: 0.75rem; /* px-3 */
+    padding-right: 0.75rem; /* px-3 */
+}
+
+/* text-sm = 0.875rem */
+.tsk_mon-container span {
+    color: #ffffff; /* text-white */
+    font-size: 0.875rem; 
+}
+
+/* Media Query for Mobile (S20 Ultra / <= 480px) */
+@media screen and (max-width: 480px) {
+    .tsk_mon-container h3 {
+        flex-direction: column;
+        gap: 0.25rem;
+        align-items: flex-start;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #4b5563;
+    }
+    
+    .tsk_mon-container h3:last-child {
+        border-bottom: none;
+    }
+}

@@ -1,0 +1,74 @@
+.um-add {
+    margin-top: 1.25rem;
+}
+
+.um-add h2 {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ud-form {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2.5rem; /* gap-10 */
+    border: 1px solid #252424; /* border-gray-700 */
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 1rem;
+    width: fit-content;
+}
+
+.ud-form input {
+    background-color: #252424;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    width: 14vw;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.ud-form input::placeholder {
+    font-weight: 500;
+}
+
+.ud-form select {
+    text-align: center;
+    font-size: 1.25rem;
+    background-color: #252424;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.form-btn {
+    font-size: 1.25rem;
+    background-color: #252424;
+    border-radius: 0.375rem;
+    padding: 0.25rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-btn:hover {
+    background-color: #2563eb; /* bg-blue-600 */
+}
+
+@media screen and (max-width: 500px) {
+    .ud-form {
+        width: 100%;
+        gap: 1.5rem;
+        box-sizing: border-box;
+    }
+    .ud-form input, .ud-form select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

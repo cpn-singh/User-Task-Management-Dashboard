@@ -1,0 +1,35 @@
+.um-stat {
+    margin-top: 2rem; /* mt-8 */
+}
+
+.stat-list {
+    background-color: #252424;
+    list-style-type: none; /* list-none */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem; /* gap-4 */
+    border: 1px solid #4b5563; /* border-1 border-gray-600 */
+    padding: 1.25rem; /* p-5 */
+    width: 100%;
+    max-width: 20rem;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-sizing: border-box;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .um-stat {
+        margin-top: 1.5rem;
+    }
+    .stat-list {
+        max-width: 100%;
+        padding: 1rem;
+    }
+}

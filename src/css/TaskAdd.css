@@ -1,0 +1,116 @@
+.TskAdd-container {
+    margin-top: 1.25rem;
+    border-radius: 0.75rem;
+    background-color: #252424; /* Gray-700 */
+    padding: 1.5rem;
+    color: white;
+}
+
+.TskAdd-container h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.tsk-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Common style for all inputs */
+.tsk-form input,
+.tsk-form textarea,
+.tsk-form select {
+    width: 100%;
+    border: 1px solid #6b7280;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    background-color: #333; /* Slightly darker background for inputs */
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* SPECIFIC FIX FOR DATE INPUT */
+.tsk-form input[type="date"] {
+    color-scheme: dark; /* Forces browser to use white text/icons */
+    min-height: 3rem;   /* Ensures enough height for dd-mm-yyyy to show */
+    cursor: text;
+}
+
+/* Ensure placeholder is visible */
+.tsk-form input::placeholder,
+.tsk-form textarea::placeholder {
+    color: #9ca3af;
+}
+
+.tsk-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.priority-label {
+    font-size: 1rem;
+    margin-bottom: -0.5rem;
+}
+
+.tsk-priority {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.prt_btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.6rem;
+    border: 1px solid #6b7280;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+/* Active States */
+.prt_active {
+    border-color: white;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.btn-low.prt_active { background-color: #ca8a04; }
+.btn-medium.prt_active { background-color: #16a34a; }
+.btn-high.prt_active { background-color: #dc2626; }
+
+.add-task-btn {
+    margin-top: 0.5rem;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+/* S20 Ultra & Mobile Adjustments */
+@media screen and (max-width: 480px) {
+    .TskAdd-container {
+        padding: 1rem;
+    }
+
+    .tsk-priority {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .prt_btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.2rem;
+    }
+
+    /* Force the date input to show its contents clearly */
+    .tsk-form input[type="date"] {
+        font-size: 0.95rem;
+        padding: 0.5rem;
+    }
+}

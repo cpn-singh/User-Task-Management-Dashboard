@@ -1,0 +1,63 @@
+.user-container {
+    height: 100%; /* h-screen */
+    width: 100%;  /* w-screen */
+    box-sizing: border-box;
+}
+
+.um-heading {
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+.um-heading h2 {
+    font-size: 3rem; /* text-5xl */
+    line-height: 1;
+    text-align: center; /* text-center */
+}
+
+.um-heading p {
+    font-size: 1.25rem; /* text-xl */
+}
+
+.um-search {
+    margin-right: 2.5rem; /* mr-10 */
+}
+
+.um-section {
+    display: flex; /* flex */
+    gap: 1.25rem;  /* gap-5 */
+    margin-top: 1.25rem; /* mt-5 */
+}
+
+
+
+.user-list-container {
+    margin-top: 3.75rem; /* mt-15 (Tailwind default for 15 is 3.75rem) */
+}
+
+@media screen and (max-width: 500px) {
+    .user-container {
+        height: auto;
+        min-height: 100vh;
+        overflow-x: hidden;
+        padding: 0 0.5rem;
+    }
+    .um-heading h2 {
+        font-size: 2.2rem;
+    }
+    .um-heading p {
+        margin-top: 10px;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .um-search {
+        margin-right: 0;
+        padding: 0 1rem;
+    }
+    .um-section {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    .user-list-container {
+        margin-top: 1rem;
+    }
+}

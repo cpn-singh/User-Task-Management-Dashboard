@@ -1,0 +1,265 @@
+/* Layout & Background */
+.dsb-container {
+  background-color: black;
+  color: white;
+  margin-right: 2.75rem;
+}
+
+.heading {
+  font-size: 3.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dsb-header {
+  font-size: 1.5rem;
+  margin: 0 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Live Clock Component */
+.dt_time {
+  background-color: rgba(31, 41, 55, 0.7);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #6b7280;
+}
+
+/* Action Buttons Area */
+.dsb-tasks {
+  display: flex;
+  gap: 2.5rem;
+  font-weight: 500;
+  font-size: 1.875rem;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+
+.dsb-addtask, .dsb-completedtask, .dsb-reset {
+  border: 1px solid #6b7280;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+}
+
+.comment {
+  font-size: 1.125rem;
+  text-align: center;
+  opacity: 0.4;
+}
+
+/* Statistics Grid */
+.dsb-tsk_info {
+  display: flex;
+  margin-top: 1.25rem;
+  justify-content: space-evenly;
+}
+
+.tlt_users, .tlt_tasks, .complt_tasks, .pending_tasks {
+  background-color: #252424;
+  border: 1px solid #6b7280;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+}
+
+.usr_icon, .tsk_icon, .cpl_icon, .pnd_icon {
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  font-size: 2.25rem;
+  padding: 0.5rem;
+}
+
+.usr_count, .tsk_count, .cpl_count, .pnd_count {
+  font-size: 3rem;
+  padding: 0.5rem;
+}
+
+.usr_count { color: #2563eb; }
+.tsk_count { color: #9333ea; }
+.cpl_count { color: #16a34a; }
+.pnd_count { color: #dc2626; }
+
+.usr_label, .tsk_label, .cpl_label, .pnd_label {
+  font-size: 1.5rem;
+}
+
+.usr_members, .tsk_members, .cpl_members, .pnd_members {
+  opacity: 0.6;
+}
+
+/* Section Summaries */
+.ovr_sumry {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  padding-right: 0.75rem;
+}
+
+.prgrs_ovrview, .usr_tsk_summary {
+  background-color: #252424;
+  border: 1px solid #6b7280;
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  width: 50%;
+}
+
+
+.prcntage h2 {
+  font-size: 4.5rem;
+  text-align: center;
+  color: #9a3412;
+}
+
+.prcntage p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.prfres_bar {
+  margin-top: 0.5rem;
+  background-color: #3d3939;
+  border-radius: 9999px;
+  height: 12px;
+}
+
+.green_bar { background-color: #15803d; padding: 0.25rem; border-radius: 9999px; }
+.orange_bar { background-color: #9a3412; padding: 0.25rem; border-radius: 9999px; }
+.red_bar { background-color: #dc2626; padding: 0.25rem; border-radius: 9999px; }
+
+/* User Details */
+.usr_task {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.usr_tsk_box{
+  margin-bottom: 1rem;
+  padding-left: 120px;
+}
+
+.usr_logo {
+  font-weight: 500;
+  background-color: #2563eb;
+  border-radius: 2rem;
+  padding: 6px;
+  width: fit-content;
+}
+
+.name_task {
+  display: flex;
+  gap: 15rem;
+}
+
+.name_bar {
+  background-color: rgba(14, 13, 13, 0.7);
+  padding: 0.25rem;
+  border-radius: 2rem;
+  margin-top: 0.5rem;
+}
+
+.usr_task_details {
+  display: flex;
+  gap: 1rem;
+}
+
+.usr_tsk_completed { color: #22c55e; font-weight: 500; display: flex; align-items: center; gap: 0.25rem; }
+.usr_tsk_pending { color: #ef4444; font-weight: 500; display: flex; align-items: center; gap: 0.25rem; }
+
+/* Responsive Adjustments for Mobile & Tablets */
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .dsb-header {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    font-size: 1.25rem !important;
+    text-align: center !important;
+  }
+
+  .dsb-tasks {
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    font-size: 1.25rem !important;
+    justify-content: center !important;
+    margin-top: 1.5rem !important;
+  }
+
+  .dsb-tasks .comment {
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+    font-size: 1rem !important;
+  }
+
+  .dsb-tsk_info {
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding: 0 1rem !important;
+    align-items: center !important;
+  }
+
+  .tlt_users, .tlt_tasks, .complt_tasks, .pending_tasks {
+    width: 100% !important;
+    max-width: 400px !important;
+  }
+
+  .usr_icon, .tsk_icon, .cpl_icon, .pnd_icon {
+    gap: 0 !important;
+    justify-content: space-between !important;
+    font-size: 2rem !important;
+  }
+
+  .usr_count, .tsk_count, .cpl_count, .pnd_count {
+    font-size: 2.5rem !important;
+  }
+
+  .usr_label, .tsk_label, .cpl_label, .pnd_label {
+    font-size: 1.5rem !important;
+  }
+
+  .ovr_sumry {
+    flex-direction: column !important;
+    padding: 0 1rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .prgrs_ovrview, .usr_tsk_summary {
+    width: 100% !important;
+    padding: 1.5rem !important;
+  }
+
+  .prcntage h2 {
+    font-size: 3.5rem !important;
+  }
+
+  .name_task {
+    gap: 0 !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+
+  .usr_task_details {
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+}
+
+/* Specific fix for very small screens like S20 Ultra (412px) */
+@media screen and (max-width: 420px) {
+  .heading {
+    font-size: 2rem !important;
+  }
+  
+  .usr_count, .tsk_count, .cpl_count, .pnd_count {
+    font-size: 2rem !important;
+  }
+}
