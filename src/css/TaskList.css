@@ -1,113 +1,115 @@
+/* ================= TASK LIST CONTAINER ================= */
 .tasklist-container {
-    width: 100%; /* Changed from max-content */
-    box-sizing: border-box;
+    width: 100%;
     display: flex;
-    gap: 1rem;
-    border: 1px solid #252424;
-    background-color: #252424;
-    padding: 0.75rem;
-    border-radius: 1.375rem;
-    border-left: 8px solid transparent; /* Base border */
-    margin-bottom: 1rem;
     align-items: center;
+
+    gap: 0.5rem; 
+
+    padding: 0.45rem 0.6rem; 
+
+    margin-bottom: 0.5rem; 
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.03);
+
+    backdrop-filter: blur(10px);
+
+    box-sizing: border-box;
 }
 
+/* ================= LEFT BORDER COLORS ================= */
+.border-l-low { border-left: 5px solid #facc15; }
+.border-l-medium { border-left: 5px solid #22c55e; }
+.border-l-high { border-left: 5px solid #ef4444; }
 
-/* Fix: Matching the class names used in your JSX */
-.border-l-low { border-left-color: #facc15; }
-.border-l-medium { border-left-color: #22c55e; }
-.border-l-high { border-left-color: #ef4444; }
-
+/* ================= CARD SECTION ================= */
 .tasklist-card {
-    flex: 1; /* Takes up remaining space */
-    min-width: 0; /* Important: allows text to truncate or wrap instead of pushing width */
+    flex: 1;
+    min-width: 0;
 }
 
+/* Header spacing reduced */
 .tasklist-card-header h3 {
-    font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 1rem;
     margin: 0;
-    word-wrap: break-word; /* Prevents long titles from cutting off */
+    line-height: 1.2;
 }
 
 .tasklist-card-header p {
+    margin: 2px 0;
+    font-size: 0.85rem;
     color: #9ca3af;
-    font-size: 14px;
-    margin: 4px 0;
 }
 
+/* ================= BODY (meta info row) ================= */
 .tasklist-card-body {
     display: flex;
-    gap: 0.75rem;
-    font-size: 12px;
+    flex-wrap: wrap;
+
+    gap: 0.45rem; /* tighter spacing between items */
     align-items: center;
-    flex-wrap: wrap; /* Allows badges to wrap on small screens */
+
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
 }
 
+/* ================= PRIORITY BADGE ================= */
 .tm-priority {
-    padding: 0.15rem 0.5rem;
-    border-radius: 0.25rem;
-    color: white;
-    font-weight: bold;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
 }
 
-/* Priority Backgrounds */
+/* Priority Colors */
 .bg-low { background-color: #ca8a04; }
 .bg-medium { background-color: #16a34a; }
 .bg-high { background-color: #dc2626; }
 
-/* Delete Button Base Styles */
+/* ================= DELETE BUTTON ================= */
 .tasklist-card-btn {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .delete-btn {
-    background-color: #111827; 
-    color: #ef4444; /* red-500 */
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+
+    border-radius: 8px;
+
     border: 1px solid #ef4444;
-    padding: 0.4rem 1rem;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
-    font-weight: 600;
+    background: transparent;
+    color: #ef4444;
+
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: 0.2s ease;
 }
 
 .delete-btn:hover {
-    background-color: #ef4444;
+    background: #ef4444;
     color: white;
 }
 
-/* Responsive Media Query */
+/* ================= RESPONSIVE ================= */
 @media screen and (max-width: 480px) {
     .tasklist-container {
-        flex-wrap: wrap; 
-        gap: 0.75rem;
-        padding: 1rem;
-    }
+        flex-direction: column;
+        align-items: flex-start;
 
-    .tasklist-card-header h3 {
-        font-size: 1.1rem;
+        gap: 0.5rem;
+        padding: 0.6rem;
     }
 
     .tasklist-card-body {
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-    }
-
-    .tasklist-card-btn {
-        width: 100%; 
-        margin-top: 0.25rem;
-        border-top: 1px solid #4b5563; /* Subtle separator line */
-        padding-top: 0.75rem;
+        gap: 0.4rem;
     }
 
     .delete-btn {
         width: 100%;
-        padding: 0.6rem;
-        font-size: 1rem;
-        background-color: #252424; 
+        padding: 0.5rem;
     }
 }

@@ -1,28 +1,40 @@
-/* Container & Basics */
+/* ================= SIDEBAR CONTAINER ================= */
 .sidebar-container {
   position: relative;
+  font-family: "Inter", sans-serif;
 }
 
+/* ================= ICON ================= */
 .lightning-icon {
   width: 2vw;
   min-width: 30px;
-  /* Shape-hugging shadow */
-  filter: drop-shadow(0 4px 6px rgba(255, 215, 0, 0.8));
-  transition: filter 0.3s ease, transform 0.3s ease;
-  display: inline-block;
+
+  filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.6));
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .lightning-icon:hover {
-  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 1));
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.9));
 }
 
-/* Trigger Button */
+/* ================= TRIGGER BUTTON ================= */
 .menu-trigger-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 10px;
   padding: 10px;
-  transition: opacity 0.3s ease;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  transition: 0.25s ease;
+}
+
+.menu-trigger-btn:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+  transform: scale(1.05);
 }
 
 .btn-hidden {
@@ -34,18 +46,27 @@
   opacity: 1;
 }
 
-/* The Sliding Panel */
+/* ================= SLIDE PANEL ================= */
 .slide-panel {
   position: fixed;
   top: 0;
   left: 0;
+
   height: 100vh;
   width: 260px;
-  background-color: #4b5563; /* Gray-600 */
-  color: white;
+
+  background: rgba(10, 15, 25, 0.95);
+  backdrop-filter: blur(15px);
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #e2e8f0;
+
   z-index: 100;
+
   transition: transform 0.3s ease-in-out;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.6);
 }
 
 .panel-open {
@@ -56,63 +77,80 @@
   transform: translateX(-100%);
 }
 
-/* Header/Logo Section */
+/* ================= HEADER ================= */
 .panel-header {
-  /* text-align: center; */
   width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 20px 10px 40px 10px;
-  /* margin: 20px 10px 10px 10px; */
-  margin-top: 20px;
-  border-bottom: 2px solid rgba(255,255,255,0.1);
+
+  padding: 1.5rem 1rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
   cursor: pointer;
 }
 
 .sidebar-heading {
-  font-size: 1.5rem;
-  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Navigation Links */
+/* ================= NAVIGATION ================= */
 .nav-links {
   list-style: none;
-  padding: 0;
-  margin-top: 25px;
+
+  padding: 1.5rem 0;
+  margin: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+
+  gap: 1rem;
 }
 
 .nav-links li {
-  font-size: 1.25rem;
-  transition: transform 0.3s ease;
+  font-size: 1.1rem;
+
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+
+  transition: 0.2s ease;
 }
 
 .nav-links li a {
-  color: white;
+  color: #e2e8f0;
   text-decoration: none;
 }
 
-/* Your 'Transcale' effect on hover */
+/* hover effect */
 .nav-links li:hover {
-  transform: translateY(-4px) scale(1.2);
+  background: rgba(96, 165, 250, 0.1);
+  transform: translateX(5px);
 }
 
 .nav-links li:hover a {
-  color: #fbbf24; /* Yellow-400 */
+  color: #60a5fa;
 }
 
-/* Background Overlay */
+/* ================= OVERLAY ================= */
 .sidebar-overlay {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.4);
+
+  background: rgba(0, 0, 0, 0.5);
+
   z-index: 50;
+  backdrop-filter: blur(2px);
 }

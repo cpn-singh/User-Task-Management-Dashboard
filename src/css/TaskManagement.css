@@ -1,217 +1,168 @@
-/* Container */
+/* ================= ROOT ================= */
 .tm-container {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 1rem;
+
+    background: radial-gradient(circle at top, #0b1220, #070a12);
+    color: #e2e8f0;
+    font-family: "Inter", sans-serif;
 }
 
-/* Heading Section */
+/* ================= HEADING ================= */
 .tm-heading {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem; /* gap-3 */
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .tm-heading h2 {
-    font-size: 3rem; /* text-5xl */
-    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .tm-heading p {
-    font-weight: 500;
-    color: #6b7280; /* text-gray-500 */
+    color: #94a3b8;
+    font-size: 1rem;
 }
 
-/* Highlights Grid */
+/* ================= HIGHLIGHTS ================= */
 .tm-highlights {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* grid-cols-4 */
-    margin-top: 1.25rem; /* mt-5 */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
 }
 
 .tm-total-card {
-    font-weight: 500;
-    background-color: #252424; /* bg-gray-700 */
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+
+    padding: 0.75rem 0.5rem;
     text-align: center;
-    border-radius: 0.75rem; /* rounded-xl */
-    padding: 0.5rem 0.75rem; /* py-2 px-3 */
-    width: 50%; /* w-1/2 */
+
+    backdrop-filter: blur(10px);
+    transition: 0.25s ease;
 }
 
-.text-2xl { font-size: 1.5rem; }
-.text-3xl { font-size: 1.875rem; }
-.text-green-700 { color: #15803d; }
-.text-red-500 { color: #ef4444; }
-.text-blue-700 { color: #1d4ed8; }
-.text-purple-500 { color: #a855f7; }
+.tm-total-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(96, 165, 250, 0.4);
+}
 
-/* Search and Tags */
+/* ================= SEARCH + FILTER ================= */
 .tm-search_tags {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
     align-items: center;
-    gap: 0.5rem; /* gap-2 */
-    margin-top: 1rem; /* mt-4 */
-    margin-right: 2.5rem; /* mr-10 */
 }
 
 .tm-srch {
-    width: 100%;
+    flex: 1;
 }
 
 .tm-srch input {
-    background-color: #252424;
-    padding: 0.75rem; /* px-3 py-3 */
     width: 100%;
-    border: 1px solid #9ca3af; /* border-1 border-gray-400 */
-    border-radius: 0.75rem;
-    color: white;
+    padding: 0.75rem;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: rgba(255, 255, 255, 0.04);
+    color: #e2e8f0;
+
     outline: none;
 }
 
 .tags-group {
     display: flex;
-    align-items: center;
-    gap: 1.25rem; /* gap-5 */
-    width: fit-content; /* w-fit */
-    padding: 0.25rem 0.75rem; /* py-1 px-3 */
-    transition: all 500ms; /* transition-all duration-500 */
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .tag-base {
-    border: 1px solid #9ca3af;
+    padding: 0.45rem 0.9rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.04);
+    color: #e2e8f0;
     cursor: pointer;
-    padding: 0.5rem 1.25rem; /* py-2 px-5 */
-    border-radius: 0.375rem; /* rounded-md */
+    transition: 0.2s;
 }
 
-.bg-blue-500 { background-color: #3b82f6; }
-.bg-gray-700 { background-color: #252424; }
+.tag-base:hover {
+    border-color: #60a5fa;
+}
+
+.bg-blue-500 {
+    background: #3b82f6;
+}
+
+.bg-gray-700 {
+    background: rgba(255, 255, 255, 0.05);
+}
 
 .sorting {
-    width: fit-content;
-    cursor: pointer;
-    background-color: #252424;
-    padding: 0.5rem 1.25rem;
-    border-radius: 0.375rem;
-    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Main Component Section */
+/* ================= LAYOUT ================= */
 .tm-component {
     display: flex;
-    gap: 1.25rem; /* gap-5 */
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
+/* LEFT SIDE */
 .flex-col-gap-5 {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
+    width: 25%;
 }
 
+/* RIGHT LIST */
 .tm-list-grid {
-    margin-top: 1.25rem;
-    display: flex; /* Grid ki jagah Flex */
-    flex-wrap: wrap; /* Jab jagah kam ho toh apne aap niche wali line mein bhej dega */
-    gap: 1.25rem;
-    
-    /* Responsive behavior ke liye width ko flexible rakha hai */
-    width: 100%; 
-    height: fit-content;
-    overflow: hidden;
-    
-    /* Alignment */
-    justify-content: center; /* Items ko horizontally center karega */
-    align-items: center;     /* Items ko vertically center karega */
-    
-    margin-right: 2.5rem;
-    margin-left: 2px;
-    transition: all 500ms;
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: max-content;
+    gap: 1.5rem;
+    justify-content: start;
+    align-items: start;
 }
 
-/* List items (li) ke liye ye setting zaroori hai taaki 3-column ka look maintain rahe */
-.tm-list-grid > * {
-    /* flex-basis: 30% ka matlab hai ek line mein lagbhag 3 items. 
-       min-width ensures ki mobile par ye ek limit se zyada chote na ho */
-    flex: 1 1 calc(33.333% - 1.25rem); 
-    min-width: fit-content
-    /* min-width: 250px;  */
-    /* max-width: 100%; */
-}
-
-/* Media Query for Mobile (S20 Ultra / <= 480px) */
-@media screen and (max-width: 480px) {
-    .tm-container {
-        padding: 0 1rem;
-    }
-
-    .tm-heading h2 {
-        font-size: 2rem;
-    }
-
-    .tm-highlights {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-    }
-
-    .tm-total-card {
-        width: 100%;
-        padding: 0.5rem;
-    }
-    
-    .tm-total-card p.text-2xl {
-        font-size: 1.1rem;
-    }
-
-    .tm-total-card p.text-3xl {
-        font-size: 1.5rem;
-    }
-
-    .tm-search_tags {
-        flex-direction: column;
-        margin-right: 0;
-        gap: 1rem;
-        align-items: stretch;
-    }
-
-    .tags-group {
-        width: 100%;
-        justify-content: space-between;
-        gap: 0.25rem;
-        flex-wrap: wrap;
-    }
-
-    .tag-base {
-        padding: 0.5rem;
-        font-size: 0.8rem;
-        flex: 1;
-        text-align: center;
-    }
-
-    .sorting {
-        width: 100%;
-    }
-
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 900px) {
     .tm-component {
         flex-direction: column;
-        gap: 1rem;
     }
 
     .flex-col-gap-5 {
         width: 100%;
     }
+}
 
-    .tm-list-grid {
-        margin-top: 0px;
-        grid-template-columns: 1fr;
-        gap: 5px;
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-        justify-content: stretch;
+@media screen and (max-width: 480px) {
+    .tm-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tm-search_tags {
+        flex-direction: column;
     }
 }

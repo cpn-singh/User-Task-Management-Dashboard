@@ -1,63 +1,182 @@
+
+/* ===== ROOT ===== */
 .user-container {
-    height: 100%; /* h-screen */
-    width: 100%;  /* w-screen */
-    box-sizing: border-box;
+  min-height: 100vh;
+  width: 100%;
+  padding: 1.2rem;
+
+  background: radial-gradient(circle at top, #0b1220, #070a12);
+  color: #e2e8f0;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 
+/* ===== HEADER ===== */
 .um-heading {
-    margin-top: 0.5rem; /* mt-2 */
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .um-heading h2 {
-    font-size: 3rem; /* text-5xl */
-    line-height: 1;
-    text-align: center; /* text-center */
+  font-size: 3rem;
+  font-weight: 800;
+
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .um-heading p {
-    font-size: 1.25rem; /* text-xl */
+  font-size: 1.05rem;
+  color: #94a3b8;
+  margin-top: 0.3rem;
 }
 
+/* ===== SEARCH ===== */
 .um-search {
-    margin-right: 2.5rem; /* mr-10 */
+  margin: 0.7rem auto;
+  max-width: 600px;
+  padding: 0.2rem;
 }
 
+.um-search input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(255,255,255,0.04);
+  color: #e2e8f0;
+
+  outline: none;
+  transition: 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.um-search input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 12px rgba(96,165,250,0.2);
+}
+
+/* ===== MAIN LAYOUT ===== */
 .um-section {
-    display: flex; /* flex */
-    gap: 1.25rem;  /* gap-5 */
-    margin-top: 1.25rem; /* mt-5 */
+  display: grid;
+  grid-template-columns: auto 2fr;
+  gap: 1.2rem;
+  margin-top: 1rem;
 }
 
+/* ===== LEFT PANEL ===== */
+.add_stat-user {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
 
+/* ===== CARDS ===== */
+.user-add,
+.user-stat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
 
+  border-radius: 16px;
+
+  padding: 1rem;
+
+  width: fit-content;
+  max-width: 100%;
+  display: inline-block;
+
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+
+  transition: 0.3s ease;
+}
+
+/* hover */
+.user-add:hover,
+.user-stat:hover {
+  transform: translateY(-3px);
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+/* ===== 🔥 STAT CONTENT SPACING FIX ===== */
+.user-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;   /* spacing between stat items */
+}
+
+/* if stat content uses paragraphs/divs inside */
+.user-stat > * {
+  margin-bottom: 0.4rem;
+}
+
+/* remove last extra spacing */
+.user-stat > *:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== RIGHT PANEL ===== */
 .user-list-container {
-    margin-top: 3.75rem; /* mt-15 (Tailwind default for 15 is 3.75rem) */
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 16px;
+
+  padding: 1rem;
+
+  min-height: 400px;
+
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+/* scrollbar */
+.user-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.user-list-container::-webkit-scrollbar-thumb {
+  background: rgba(96,165,250,0.4);
+  border-radius: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 900px) {
+  .um-section {
+    grid-template-columns: 1fr;
+  }
+
+  .add_stat-user {
+    align-items: stretch;
+  }
+
+  .user-add,
+  .user-stat {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .user-container {
-        height: auto;
-        min-height: 100vh;
-        overflow-x: hidden;
-        padding: 0 0.5rem;
-    }
-    .um-heading h2 {
-        font-size: 2.2rem;
-    }
-    .um-heading p {
-        margin-top: 10px;
-        font-size: 1rem;
-        text-align: center;
-    }
-    .um-search {
-        margin-right: 0;
-        padding: 0 1rem;
-    }
-    .um-section {
-        flex-direction: column;
-        padding: 0 1rem;
-    }
-    .user-list-container {
-        margin-top: 1rem;
-    }
+  .user-container {
+    padding: 1rem;
+  }
+
+  .um-heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .um-heading p {
+    font-size: 1rem;
+  }
+
+  .um-search {
+    padding: 0;
+  }
 }
