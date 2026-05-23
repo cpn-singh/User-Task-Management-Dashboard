@@ -42,7 +42,7 @@ const Sidebar = () => {
           onClick={closeMenu}
           aria-label="Close navigation menu"
         >
-          <img src="src/assets/lightning_8650972.png" className="lightning-icon" alt="Logo" />
+          <img src={logo} className="lightning-icon" alt="Logo" />
           <h2 className="sidebar-heading">Task Flow</h2>
         </button>
 
