@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../css/Sidebar.css';
+import  logo from "../assets/lightning_8650972.png";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ const Sidebar = () => {
         aria-expanded={isOpen}
         aria-controls="sidebar-panel"
       >
-        <img src="src/assets/lightning_8650972.png" className="lightning-icon" alt="Open Menu" />
+        <img src={logo} className="lightning-icon" alt="Open Menu" />
       </button>
 
       {/* Slide Panel */}
