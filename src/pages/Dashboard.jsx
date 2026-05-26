@@ -76,7 +76,6 @@ useEffect(() => {
       </div>
       <div className='dsb-tasks'>
         <div className='dsb-addtask cursor-pointer' onClick={gototaskManagement}>+ Add Task</div>
-        <div className='dsb-completedtask'>&#10004; Completed Random</div>
         <div className='dsb-reset cursor-pointer' onClick={reset}>&#8635; Reset</div>
         <div className='comment'>&larr; Try these to see derived state update live!</div>
       </div>

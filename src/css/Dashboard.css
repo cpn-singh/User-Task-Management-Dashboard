@@ -58,7 +58,6 @@
 }
 
 .dsb-addtask,
-.dsb-completedtask,
 .dsb-reset {
   padding: 0.9rem 1.2rem;
   border-radius: 14px;
@@ -90,6 +89,8 @@
 }
 
 .comment {
+  padding-top:1rem;
+  text-align: center;
   font-size: 0.9rem;
   opacity: 0.5;
 }
